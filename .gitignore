@@ -1,28 +1,90 @@
-# Virtual environments
+# Python virtual environments
 venv/
 env/
+.env/
+.venv/
+ENV/
 
-# Python cache
+# Python cache files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
 
 # Environment variables
 .env
+.env.local
+.env.*.local
 
 # Data files
 data/
+datasets/
+raw_data/
+processed_data/
+*.csv
+*.xlsx
+*.npy
+*.npz
 
-# Model files (if not using Git LFS)
+# Model files and checkpoints
 models/*.h5
+models/*.keras
+models/*.pkl
+models/*.pth
+checkpoints/
+*.ckpt
+saved_models/
+weights/
 
-# Logs
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.nbconvert.ipynb
+
+# TensorFlow logs and cache
+logs/
+tensorboard_logs/
+.tensorboard-info/
+*.tfevents.*
+
+# Training logs and metrics
+wandb/
+mlruns/
 *.log
+metrics/
 
-# OS files
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.spyderproject
+.spyproject
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Pyngrok
+# Streamlit
+.streamlit/
+streamlit_logs/
+
+# Deployment
 .ngrok/
+.ngrok2/
+*.pem
+*.key
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Keep these files
+!models/README.md
+!data/README.md

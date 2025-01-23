@@ -1,14 +1,25 @@
-streamlit
-tensorflow
-keras
-numpy
-pandas
-matplotlib
-seaborn
-scikit-learn
-plotly
-opencv-python
-google-generativeai
-python-dotenv
-Pillow
-pyngrok
+# Deep Learning Framework
+tensorflow>=2.15.0
+keras>=2.15.0
+
+# Data Processing & Scientific Computing
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+Pillow>=10.0.0  # For image processing
+opencv-python>=4.8.0  # For image processing
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.18.0
+
+# Web App & Deployment
+streamlit>=1.29.0
+pyngrok>=7.0.0  # For tunnel access
+
+# AI/ML Tools
+google-generativeai>=0.3.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
