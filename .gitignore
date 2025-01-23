@@ -88,3 +88,17 @@ temp/
 # Keep these files
 !models/README.md
 !data/README.md
+
+# Output directories
+saliency_maps/
+!saliency_maps/.gitkeep
+
+# Keep sample outputs
+!saliency_maps/sample_*.png
+!saliency_maps/example_*.png
+
+# In case you save both images and numpy arrays
+saliency_maps/**/*.png
+saliency_maps/**/*.jpg
+saliency_maps/**/*.npy
+saliency_maps/**/*.npz
