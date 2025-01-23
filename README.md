@@ -31,7 +31,7 @@ A deep learning-based application for automated brain tumor classification using
 - **Multi-Class Tumor Classification:** Accurate classification of brain MRI scans into four categories
 - **Dual Model Support:** Utilizes both pre-trained Xception and Custom CNN architectures
 - **Interactive Web Interface:** User-friendly Streamlit application for easy interaction
-- **Saliency Map Visualization:** Helps understand model decision-making process
+- **Saliency Map Visualization:** Helps understand model decision-making process; auto-generated in `saliency_maps/` directory
 - **AI-Powered Explanations:** Detailed explanations for model predictions
 - **Real-time Processing:** Quick and efficient image processing and classification
 
@@ -53,6 +53,7 @@ A deep learning-based application for automated brain tumor classification using
 
 ### Prerequisites
 - Python 3.x
+- Git LFS (for downloading model files)
 - pip package manager
 
 ### Installation Steps
@@ -61,7 +62,20 @@ A deep learning-based application for automated brain tumor classification using
 git clone https://github.com/stevennple/brain-tumor-classification.git
 cd brain-tumor-classification
 ```
-2. Install required dependencies:
+
+2. Install Git LFS and pull model files:
+```bash
+git lfs install
+git lfs pull
+```
+
+3. Create and activate virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
+```
+
+4. Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -76,7 +90,9 @@ View the classification results, saliency maps, and explanations
 ## Model Architecture
 The project implements two different models:
 1. **Pre-trained Xception Model:** Transfer learning approach using the Xception architecture
+- Enhanced Model (241MB): Improved model with higher accuracy
 2. **Custom CNN:** Specialized convolutional neural network designed for brain tumor classification
+- Base Model (55MB): Initial classification model
 
 ## Dataset Details
 The model is trained on a comprehensive dataset of brain MRI scans including:

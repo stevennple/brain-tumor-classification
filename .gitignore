@@ -26,11 +26,7 @@ processed_data/
 *.npy
 *.npz
 
-# Model files and checkpoints
-models/*.h5
-models/*.keras
-models/*.pkl
-models/*.pth
+# Checkpoints
 checkpoints/
 *.ckpt
 saved_models/
