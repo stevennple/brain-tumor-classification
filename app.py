@@ -1,4 +1,3 @@
-
 import tensorflow as tf
 
 # Set GPU memory growth
@@ -13,15 +12,15 @@ if gpus:
 
 # Other imports
 import streamlit as st
-from tensorflow.keras.models import load_model
+import tensorflow as tf
+from tensorflow.keras.models import load_model, Sequential
 from tensorflow.keras.preprocessing import image
-import numpy as np
-import plotly.graph_objects as go
-import cv2
-from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Flatten
 from tensorflow.keras.optimizers import Adamax
 from tensorflow.keras.metrics import Precision, Recall
+import numpy as np
+import plotly.graph_objects as go
+import cv2
 import google.generativeai as genai
 import PIL.Image
 import os
@@ -165,7 +164,10 @@ def generate_grad_cam(model, img_array, class_index, img_size):
 
 
 @st.cache_resource
-def load_xception_model(model_path):
+def load_xception_model(model_path: str):
+    if not os.path.isfile(model_path):
+        raise FileNotFoundError(f"Weight file not found: {model_path}")
+    
     img_shape = (224, 224, 3)
     base_model = tf.keras.applications.Xception(
         include_top=False, 
@@ -210,10 +212,10 @@ if uploaded_file is not None:
     )
 
     if selected_model == "Transfer Learning - Xception":
-        model = load_xception_model('/data/xception_model.weights.h5')
+        model = load_xception_model('models/xception_model.weights.h5')
         img_size = (224, 224)
     else:
-        model = load_model('/data/cnn_model.h5')
+        model = load_model('models/cnn_model.h5')
         img_size = (224, 224)
 
     labels = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
